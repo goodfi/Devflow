@@ -11,7 +11,7 @@ type Props = {};
 const NavContent = (props: Props) => {
   const pathname = usePathname();
   return (
-    <section className="flex  flex-col gap-6 pt-36">
+    <section className="flex  flex-col gap-6">
       {sidebarLinks.map((item) => {
         const isActive =
           (pathname.includes(item.route) && item.route.length > 1) ||
@@ -33,7 +33,11 @@ const NavContent = (props: Props) => {
                 height={20}
                 className={`${isActive ? '' : 'invert-colors'}`}
               />
-              <p className={`${isActive ? 'base-bold' : 'base-medium'}`}>
+              <p
+                className={`${
+                  isActive ? 'base-bold' : 'base-medium'
+                } max-lg:hidden`}
+              >
                 {item.label}
               </p>
             </Link>
