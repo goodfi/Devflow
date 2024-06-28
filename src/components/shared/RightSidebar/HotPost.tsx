@@ -14,9 +14,12 @@ const HotPost = () => {
     <div>
       <h3 className="h3-bold pb-8 text-dark200_light900">Hot Questions</h3>
       <div className="flex flex-col gap-6">
-        {hotPost.map((item) => {
+        {hotPost.map((item, index) => {
           return (
-            <div className="flex items-start justify-between body-medium text-dark500_light700">
+            <div
+              key={index}
+              className="flex items-start justify-between body-medium text-dark500_light700"
+            >
               <p>{item}</p>
               <Image
                 src="assets/icons/chevron-right.svg"

@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import NavContent from './NavContent';
-import { SignedOut } from '@clerk/nextjs';
+import { SignedIn, SignedOut } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 
 const MobileNav = () => {
@@ -60,6 +60,21 @@ const MobileNav = () => {
               </SheetClose>
             </div>
           </SignedOut>
+          <SignedIn>
+            <Link
+              href={'/'}
+              className={`' flex items-center justify-start gap-4 bg-transparent p-4 w-full mb-6 primary-gradient rounded-lg `}
+            >
+              <Image
+                src={'/assets/icons/user.svg'}
+                alt={'cos'}
+                width={20}
+                height={20}
+                className="text-light-900"
+              />
+              <p className="base-medium text-light-900 ">Logout</p>
+            </Link>
+          </SignedIn>
         </div>
       </SheetContent>
     </Sheet>

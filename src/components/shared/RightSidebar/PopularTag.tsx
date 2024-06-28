@@ -19,6 +19,7 @@ const PopularTag = () => {
         {popularTag.map((item) => {
           return (
             <RenderTag
+              key={item._id}
               _id={item._id}
               name={item.tag}
               totalQuestions={item.totalQuestions}
